@@ -1,12 +1,11 @@
 // Generated with util/create-component.js
 export interface ButtonProps {
-  type: 'primary' | 'secondary' | 'ghost' | 'danger' | 'default';
-  size: 'large' | 'default' | 'small';
-  shape: 'circle' | 'round';
+  type: 'primary' | 'ghost' | 'danger' | 'default';
+  size: 'large' | 'medium' | 'small';
   role: 'button' | 'submit' | 'link';
+  shape?: 'circle' | 'round';
   block?: boolean;
   href?: string;
   target?: '_self' | '_blank' | '_parent' | '_top';
-  icon?: React.ReactElement;
   onClick: (event: React.MouseEvent) => void;
 }

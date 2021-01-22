@@ -6,25 +6,33 @@ import { ButtonProps } from './Button.types';
 import './Button.scss';
 
 //TODO Add a loading property
+//TODO Add an icon property
 const Button: React.FC<ButtonProps> = ({
   type = 'default',
-  size = 'default',
-  shape = 'round',
+  size = 'medium',
+  shape,
   role = 'button',
   block,
   href,
   target,
-  icon,
   onClick,
   children,
 }) => {
   const defaultStyles = ['button'];
-  block ? defaultStyles.push(type, size, 'block') : defaultStyles.push(type, size, shape);
+  defaultStyles.push(`button--${type}`, `button--${size}`);
+  block && defaultStyles.push('block');
+  shape && defaultStyles.push(`button--${size}--${shape}`);
 
   switch (role) {
     case 'link':
       return (
-        <a data-testid="button" href={href} target={target} className={defaultStyles.join(' ').trim()}>
+        <a
+          data-testid="button"
+          href={href}
+          target={target}
+          className={defaultStyles.join(' ').trim()}
+          rel="noreferrer noopener"
+        >
           {children}
         </a>
       );
@@ -38,7 +46,6 @@ const Button: React.FC<ButtonProps> = ({
           onClick={onClick}
           className={defaultStyles.join(' ').trim()}
         >
-          {icon && <span>{icon}</span>}
           {children}
         </button>
       );
@@ -52,7 +59,6 @@ const Button: React.FC<ButtonProps> = ({
           onClick={onClick}
           className={defaultStyles.join(' ').trim()}
         >
-          {icon && <span>{icon}</span>}
           {children}
         </button>
       );
