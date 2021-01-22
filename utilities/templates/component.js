@@ -1,5 +1,5 @@
 module.exports = (componentName) => ({
-  content: `// Generated with util/create-component.js
+  content: `// Generated with utilities/create-component.js
 import React from "react";
 
 import { ${componentName}Props } from "./${componentName}.types";

@@ -1,0 +1,166 @@
+// Generated with util/create-component.js
+@import "style/main.scss";
+
+.button {
+  font-weight: $semi-bold;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  transition: all 150ms ease-in-out;
+  border-radius: $corner1;
+  display: inline;
+  text-decoration: none;
+
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 2px $indigo1;
+  }
+
+  // Style
+  &--default {
+    color: $indigo5;
+    border-color: $indigo5;
+
+    &:hover {
+      color: $indigo6;
+      border-color: $indigo6;
+      background-color: $indigo0;
+    }
+
+    &:active {
+      color: $indigo7;
+      border-color: $indigo7;
+      background-color: $indigo1;
+    }
+
+    &:disabled {
+      background-color: $gray2;
+      border-color: transparent;
+      color: $gray5;
+      cursor: not-allowed;
+    }
+  }
+
+  &--primary {
+    color: $gray0;
+    background-color: $indigo5;
+
+    &:hover {
+      background-color: $indigo6;
+    }
+
+    &:active {
+      background-color: $indigo7;
+    }
+
+    &:disabled {
+      background-color: $gray2;
+      border-color: transparent;
+      color: $gray5;
+      cursor: not-allowed;
+    }
+  }
+
+  &--ghost {
+    color: $indigo5;
+
+    &:hover {
+      color: $indigo6;
+      background-color: $indigo0;
+    }
+
+    &:active {
+      color: $indigo7;
+      background-color: $indigo1;
+    }
+
+    &:disabled {
+      background-color: $gray2;
+      border-color: transparent;
+      color: $gray5;
+      cursor: not-allowed;
+    }
+  }
+
+  &--danger {
+    color: $gray0;
+    background-color: $danger3;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $danger0;
+    }
+
+    &:hover {
+      background-color: $danger4;
+    }
+
+    &:active {
+      background-color: darken($danger4, 5%);
+    }
+
+    &:disabled {
+      background-color: $gray2;
+      border-color: transparent;
+      color: $gray5;
+      cursor: not-allowed;
+    }
+  }
+
+  // Size
+  &--large {
+    font-size: $default-size;
+    height: 2.5rem;
+    padding: $inset0 $inset1;
+
+    // Shape
+    &--round {
+      border-radius: 2rem;
+    }
+
+    &--circle {
+      border-radius: 50%;
+      min-width: 2.5rem;
+    }
+  }
+
+  &--medium {
+    font-size: $small-size;
+    height: 2rem;
+    padding: 0.25rem $inset1;
+
+    // Shape
+    &--round {
+      border-radius: 2rem;
+    }
+
+    &--circle {
+      border-radius: 50%;
+      width: 2rem;
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+  &--small {
+    font-size: $small-size;
+    height: 1.5rem;
+    padding: 0 $inset0;
+
+    // Shape
+    &--round {
+      border-radius: 2rem;
+    }
+
+    &--circle {
+      border-radius: 50%;
+      min-width: 2rem;
+    }
+  }
+}
+
+.block {
+  display: block;
+  width: 100%;
+}

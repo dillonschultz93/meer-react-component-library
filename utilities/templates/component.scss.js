@@ -1,5 +1,5 @@
 module.exports = () => ({
-  content: `// Generated with util/create-component.js
+  content: `// Generated with utilities/create-component.js
 @import "style/main.scss";
 `,
   extension: `.scss`,
