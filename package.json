@@ -14,7 +14,7 @@
     "generate": "node ./utilities/create-component.js",
     "build": "rollup -c",
     "test": "jest --passWithNoTests",
-    "test:watch": "jest --passWithNoTests --watch",
+    "test:watch": "jest --watch --passWithNoTests",
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
