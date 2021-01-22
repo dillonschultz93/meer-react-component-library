@@ -6,25 +6,170 @@ import Button from '../Button/Button';
 
 # Button
 
-Lorem ipsum.
+The `<Button>` component is a typical native `<button>` element or `<a>` element. It should be used to submit forms or to behave as a link.
+<br />
+<br />
 
-## Default
+## Role
+
+The role of the `<Button>` component is dependant on the `role ` prop.
+<br/>
+
+### Button
+The button role can be achieved by passing the value of `'button'` to the `role` prop.
 
 <Canvas>
-  <Story name="Default">
-    <Button role="link" href="https://dillonschultz.design" target="_blank">Link</Button>
+  <Story name="Role/Button">
+    <Button role="button">Button</Button>
+  </Story>
+</Canvas>
+
+### Submit
+The submit role can be achieved by passing the value of `'submit'` to the `role` prop.
+
+<Canvas>
+  <Story name="Role/Submit">
+    <Button role="submit">Submit</Button>
+  </Story>
+</Canvas>
+
+
+### Link
+The link role can be achieved by passing the value of `'link'` to the `role` prop. You can then provide a url to the `href` prop and target to the `target` prop. By default the target is set to the value of `'_blank'`.
+
+<Canvas>
+  <Story name="Role/Link">
+    <Button role="link" href="https://dillonschultz.design">Link</Button>
+  </Story>
+</Canvas>
+
+<br />
+<br />
+
+## Style
+
+The style of the `<Button>` component is dependant on the `type` prop.
+<br/>
+
+### Default
+The default styling can be achieved by passing the value of `'default'` to the `type` prop.
+
+<Canvas>
+  <Story name="Style/Default">
+    <Button type="default">Default</Button>
+  </Story>
+</Canvas>
+
+### Primary
+The primary styling can be achieved by passing the value of `'primary'` to the `type` prop.
+
+<Canvas>
+  <Story name="Style/Primary">
+    <Button type="primary">Primary</Button>
+  </Story>
+</Canvas>
+
+### Ghost
+The ghost styling can be achieved by passing the value of `'ghost'` to the `type` prop.
+
+<Canvas>
+  <Story name="Style/Ghost">
+    <Button type="ghost">Ghost</Button>
+  </Story>
+</Canvas>
+
+### Danger
+The danger styling can be achieved by passing the value of `'danger'` to the `type` prop.
+
+<Canvas>
+  <Story name="Style/Danger">
+    <Button type="danger">Danger</Button>
+  </Story>
+</Canvas>
+
+## Size
+
+The size of the `<Button>` component is dependant on the `size` prop.
+<br/>
+
+### Small
+The small size can be achieved by passing the value of `'small'` to the `size` prop.
+
+<Canvas>
+  <Story name="Size/Small">
+    <Button size="small">Small</Button>
+  </Story>
+</Canvas>
+
+### Medium
+The medium size can be achieved by passing the value of `'medium'` to the `size` prop.
+
+<Canvas>
+  <Story name="Size/Medium">
+    <Button size="medium">Medium</Button>
+  </Story>
+</Canvas>
+
+### Large
+The large size can be achieved by passing the value of `'large'` to the `size` prop.
+
+<Canvas>
+  <Story name="Size/Large">
+    <Button size="large">Large</Button>
+  </Story>
+</Canvas>
+
+### Full width
+The full width size can be achieved by passing the `block ` prop.
+
+<Canvas>
+  <Story name="Size/Full Width">
+    <Button type="primary" block>Full Width</Button>
+  </Story>
+</Canvas>
+
+## Shape
+
+The size of the `<Button>` component is dependant on the `size` prop.
+<br/>
+
+### Default
+The default shape can be achieved by not passing anything to the `shape` prop.
+
+<Canvas>
+  <Story name="Shape/Default">
+    <Button>Default</Button>
+  </Story>
+</Canvas>
+
+### Round
+The rounded shape can be achieved by passing `'round'` to the `shape` prop.
+
+<Canvas>
+  <Story name="Shape/Round">
+    <Button shape="round">Rounded</Button>
+  </Story>
+</Canvas>
+
+### Circle
+The circle shape can be achieved by passing `'circle'` to the `shape` prop.
+
+<Canvas>
+  <Story name="Shape/Circle">
+    <Button shape="circle">M</Button>
   </Story>
 </Canvas>
 
 ## Prop Definitions
 
-| Name       | Type       | Value(s)   | Optional   |
-|------------|------------|------------|------------|
-|            |            |            |            |
-|            |            |            |            |
-|            |            |            |            |
-|            |            |            |            |
-|            |            |            |            |
-|            |            |            |            |
-|            |            |            |            |
-|            |            |            |            |
+| Name       | Type                                | Value(s)                                      | Optional |
+|------------|-------------------------------------|-----------------------------------------------|----------|
+| `block`    | `Boolean`                           |                                               | true     |
+| `disabled` | `Boolean`                           |                                               | true     |
+| `href`     | `String`                            |                                               | true     |
+| `onClick`  | `(event: React.MouseEvent) => void` |                                               | true     |
+| `role`     | `String`                            | 'button' \| 'submit' \| 'link'                | false    |
+| `shape`    | `String`                            | 'circle' \| 'round'                           | true     |
+| `size`     | `String`                            | 'large' \| 'medium' \| 'small'                | false    |
+| `target`   | `String`                            | '_self' \| '_blank' \| '_parent' \| '_top'    | true     |
+| `type`     | `String`                            | 'primary' \| 'ghost' \| 'default' \| 'danger' | false    |
