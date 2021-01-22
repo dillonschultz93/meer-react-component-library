@@ -1,0 +1,138 @@
+// # TYPOGRAPHY
+
+// ## Basic Style
+
+body {
+  font-family: $font;
+  color: $gray9;
+  font-weight: $regular;
+  font-style: normal;
+}
+
+.heading {
+  font-weight: $bold;
+
+  &--jumbo {
+    font-size: $jumbo-size;
+    line-height: 3rem;
+  }
+
+  &--large {
+    font-size: $large-size;
+    line-height: 3rem;
+  }
+}
+
+h1 {
+  font-size: $h1-size;
+  font-weight: $bold;
+  line-height: 3rem;
+  margin-bottom: $outset5;
+}
+
+h2 {
+  font-size: $h2-size;
+  font-weight: $bold;
+  line-height: 1.5rem;
+  margin-bottom: $outset2;
+}
+
+h3 {
+  font-weight: $semi-bold;
+  font-size: $h3-size;
+  line-height: 1.5rem;
+}
+
+h4 {
+  font-weight: $semi-bold;
+  font-size: $h4-size;
+  line-height: 1.5rem;
+}
+
+h5 {
+  font-weight: $semi-bold;
+  font-size: $h5-size;
+  line-height: 1.5rem;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 1.5px;
+}
+
+.paragraph {
+  font-weight: $regular;
+  font-size: $default-size;
+  line-height: 1.5rem;
+  margin-bottom: $outset2;
+
+  &--small {
+    font-size: $small-size;
+    line-height: 1.7rem;
+    margin-bottom: $outset2;
+  }
+
+  &--lead {
+    padding: $inset1;
+    font-weight: $semi-bold;
+    font-size: $h4-size;
+    line-height: 1.5rem;
+    background-color: $gray1;
+    border-radius: $corner1;
+    margin-bottom: $outset5;
+  }
+}
+
+// ##
+
+ul {
+  font-weight: $regular;
+  font-size: $default-size;
+  line-height: 1.5rem;
+  margin-bottom: $outset2;
+
+  & :not(:last-child) {
+    margin-bottom: $outset0;
+  }
+
+  li {
+    padding-left: $inset1;
+    text-indent: $inset1 * -1;
+
+    &:before {
+      content: '•';
+      font-weight: $bold;
+      padding-right: $inset0;
+    }
+  }
+}
+
+.link {
+  text-decoration: none;
+  font-weight: $semi-bold;
+  color: $indigo6;
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    transform: scaleX(0);
+		transform-origin: bottom right;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+		transform-origin: bottom left;
+  }
+
+  &::before {
+    content: ' ';
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		inset: 0 0 0 0;
+		background: $indigo1;
+		z-index: -1;
+		transition: transform 0.3s ease;
+  }
+}

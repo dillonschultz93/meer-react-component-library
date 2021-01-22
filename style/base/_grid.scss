@@ -1,0 +1,135 @@
+// # GRID
+
+// ## Containers
+.container {
+  max-width: $bp-xl;
+  margin: 0 auto;
+  padding: 0 $inset1;
+
+  &--fluid {
+    margin: 0;
+    max-width: 100%;
+  }
+}
+
+// ## Rows
+.row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 25fr);
+  align-items: center;
+  column-gap: $gutter;
+  margin-bottom: $gutter;
+}
+
+// ## Columns
+.col-sm-full {
+  width: 100%;
+  grid-column-start: auto;
+  grid-column-end: span 4;
+}
+
+.col-sm-half {
+  width: 100%;
+  grid-column-start: auto;
+  grid-column-end: span 2;
+}
+
+.col-sm-quarter {
+  width: 100%;
+  grid-column-start: auto;
+  grid-column-end: span auto;
+}
+
+// ##Responsiveness
+
+// ### Responsive Rows & Columns
+@media (min-width: $bp-md) {
+  .row {
+    grid-template-columns: repeat(8, 12.5fr);
+  }
+
+  .col-md-full {
+    grid-column-end: span 8;
+  }
+
+  .col-md-half {
+    grid-column-end: span 4;
+  }
+
+  .col-md-quarter {
+    grid-column-end: span 2;
+  }
+
+  .col-md-eighth {
+    width: 100%;
+    grid-column-start: auto;
+    grid-column-end: span auto;
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .row {
+    grid-template-columns: repeat(12, 6.88fr);
+  }
+
+  .col-lg-full {
+    grid-column-end: span 12;
+  }
+
+  .col-lg-half {
+    grid-column-end: span 6;
+  }
+
+  .col-lg-third {
+    width: 100%;
+    grid-column-start: auto;
+    grid-column-end: span 4;
+  }
+
+  .col-lg-quarter {
+    grid-column-end: span 3;
+  }
+
+  .col-lg-eighth {
+    grid-column-end: span 2;
+  }
+
+  .col-lg-twelfth {
+    width: 100%;
+    grid-column-start: auto;
+    grid-column-end: span 1;
+  }
+}
+
+@media (min-width: $bp-xl) {
+  .row {
+    grid-template-columns: repeat(12, 10fr);
+  }
+
+  .col-xl-full {
+    grid-column-end: span 12;
+  }
+
+  .col-xl-half {
+    grid-column-end: span 6;
+  }
+
+  .col-xl-third {
+    width: 100%;
+    grid-column-start: auto;
+    grid-column-end: span 4;
+  }
+
+  .col-xl-quarter {
+    grid-column-end: span 3;
+  }
+
+  .col-xl-eighth {
+    grid-column-end: span 2;
+  }
+
+  .col-xl-twelfth {
+    grid-column-end: span 1;
+  }
+}
