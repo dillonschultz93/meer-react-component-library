@@ -8,7 +8,7 @@
   background-color: transparent;
   cursor: pointer;
   outline: none;
-  transition: all 250ms ease-in-out;
+  transition: all 150ms ease-in-out;
   border-radius: $corner1;
   display: inline;
   text-decoration: none;
@@ -16,10 +16,6 @@
   &:active,
   &:focus {
     box-shadow: 0 0 0 2px $indigo1;
-  }
-
-  &:active {
-    transform: scale(0.98);
   }
 
   // Style
@@ -36,6 +32,14 @@
     &:active {
       color: $indigo7;
       border-color: $indigo7;
+      background-color: $indigo1;
+    }
+
+    &:disabled {
+      background-color: $gray2;
+      border-color: transparent;
+      color: $gray5;
+      cursor: not-allowed;
     }
   }
 
@@ -50,6 +54,13 @@
     &:active {
       background-color: $indigo7;
     }
+
+    &:disabled {
+      background-color: $gray2;
+      border-color: transparent;
+      color: $gray5;
+      cursor: not-allowed;
+    }
   }
 
   &--ghost {
@@ -62,6 +73,14 @@
 
     &:active {
       color: $indigo7;
+      background-color: $indigo1;
+    }
+
+    &:disabled {
+      background-color: $gray2;
+      border-color: transparent;
+      color: $gray5;
+      cursor: not-allowed;
     }
   }
 
@@ -79,6 +98,13 @@
 
     &:active {
       background-color: darken($danger4, 5%);
+    }
+
+    &:disabled {
+      background-color: $gray2;
+      border-color: transparent;
+      color: $gray5;
+      cursor: not-allowed;
     }
   }
 
@@ -111,7 +137,9 @@
 
     &--circle {
       border-radius: 50%;
-      min-width: 2rem;
+      width: 2rem;
+      padding: 0;
+      text-align: center;
     }
   }
 

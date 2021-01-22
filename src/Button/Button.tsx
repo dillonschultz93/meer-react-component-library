@@ -12,9 +12,10 @@ const Button: React.FC<ButtonProps> = ({
   size = 'medium',
   shape,
   role = 'button',
+  disabled,
   block,
   href,
-  target,
+  target = role === 'link' && '_blank',
   onClick,
   children,
 }) => {
@@ -43,6 +44,7 @@ const Button: React.FC<ButtonProps> = ({
           data-testid="button"
           role="button"
           type="submit"
+          disabled={disabled}
           onClick={onClick}
           className={defaultStyles.join(' ').trim()}
         >
@@ -55,7 +57,8 @@ const Button: React.FC<ButtonProps> = ({
         <button
           data-testid="button"
           role="button"
-          type="submit"
+          type="button"
+          disabled={disabled}
           onClick={onClick}
           className={defaultStyles.join(' ').trim()}
         >
