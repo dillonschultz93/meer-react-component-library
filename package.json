@@ -11,7 +11,7 @@
     "storybook": "start-storybook -p 6006",
     "storybook:export": "build-storybook",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "generate": "node ./util/create-component.js",
+    "generate": "node ./utilities/create-component.js",
     "build": "rollup -c",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --passWithNoTests --watch",
