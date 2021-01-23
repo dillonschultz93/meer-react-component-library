@@ -40,7 +40,7 @@ const Button: React.FC<ButtonProps> = ({
               {icon}
             </span>
           )}
-          <span>{children}</span>
+          {children && <span>{children}</span>}
         </a>
       );
 
@@ -59,7 +59,7 @@ const Button: React.FC<ButtonProps> = ({
               {icon}
             </span>
           )}
-          <span>{children}</span>
+          {children && <span>{children}</span>}
         </button>
       );
 
@@ -78,7 +78,7 @@ const Button: React.FC<ButtonProps> = ({
               {icon}
             </span>
           )}
-          <span>{children}</span>
+          {children && <span>{children}</span>}
         </button>
       );
   }
