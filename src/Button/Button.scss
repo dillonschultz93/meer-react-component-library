@@ -3,6 +3,7 @@
 
 .button {
   font-weight: $semi-bold;
+  line-height: 1;
   box-sizing: border-box;
   border: 2px solid transparent;
   background-color: transparent;
@@ -10,8 +11,14 @@
   outline: none;
   transition: all 150ms ease-in-out;
   border-radius: $corner1;
-  display: inline;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
   text-decoration: none;
+  vertical-align: middle;
+  user-select: none;
 
   &:active,
   &:focus {
@@ -111,6 +118,7 @@
   // Size
   &--large {
     font-size: $default-size;
+    line-height: 1;
     height: 2.5rem;
     padding: $inset0 $inset1;
 
@@ -127,6 +135,7 @@
 
   &--medium {
     font-size: $small-size;
+    line-height: 1;
     height: 2rem;
     padding: 0.25rem $inset1;
 
@@ -145,6 +154,7 @@
 
   &--small {
     font-size: $small-size;
+    line-height: 1;
     height: 1.5rem;
     padding: 0 $inset0;
 
@@ -157,6 +167,12 @@
       border-radius: 50%;
       min-width: 2rem;
     }
+  }
+
+  &--icon {
+    margin-right: 0.25rem;
+    display: inline-block;
+    box-sizing: border-box;
   }
 }
 

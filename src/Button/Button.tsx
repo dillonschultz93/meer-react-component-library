@@ -15,6 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   block,
   href,
+  icon,
   target = role === 'link' && '_blank',
   onClick,
   children,
@@ -34,7 +35,12 @@ const Button: React.FC<ButtonProps> = ({
           className={defaultStyles.join(' ').trim()}
           rel="noreferrer noopener"
         >
-          {children}
+          {icon && (
+            <span role="img" className="button--icon">
+              {icon}
+            </span>
+          )}
+          <span>{children}</span>
         </a>
       );
 
@@ -48,7 +54,12 @@ const Button: React.FC<ButtonProps> = ({
           onClick={onClick}
           className={defaultStyles.join(' ').trim()}
         >
-          {children}
+          {icon && (
+            <span role="img" className="button--icon">
+              {icon}
+            </span>
+          )}
+          <span>{children}</span>
         </button>
       );
 
@@ -62,7 +73,12 @@ const Button: React.FC<ButtonProps> = ({
           onClick={onClick}
           className={defaultStyles.join(' ').trim()}
         >
-          {children}
+          {icon && (
+            <span role="img" className="button--icon">
+              {icon}
+            </span>
+          )}
+          <span>{children}</span>
         </button>
       );
   }

@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { actions } from '@storybook/addon-actions';
 import Button from '../Button/Button';
+import Icon from '../Icon/Icon.tsx';
 
 <Meta title="Components/Button" component={Button} />
 
@@ -160,6 +161,15 @@ The circle shape can be achieved by passing `'circle'` to the `shape` prop.
   </Story>
 </Canvas>
 
+### Icon
+An icon can be displayed inside the button by passing an `<Icon />` component in to the `icon` prop.
+
+<Canvas>
+  <Story name="Icon">
+    <Button type="danger" role="button" size="large" icon={<Icon name="delete" size={24} color="gray0" />}>Delete</Button>
+  </Story>
+</Canvas>
+
 ## Prop Definitions
 
 | Name       | Type                                | Value(s)                                      | Optional |
@@ -167,6 +177,7 @@ The circle shape can be achieved by passing `'circle'` to the `shape` prop.
 | `block`    | `Boolean`                           |                                               | true     |
 | `disabled` | `Boolean`                           |                                               | true     |
 | `href`     | `String`                            |                                               | true     |
+| `icon`     | `React.ReactElement`                |                                               | true     |
 | `onClick`  | `(event: React.MouseEvent) => void` |                                               | true     |
 | `role`     | `String`                            | 'button' \| 'submit' \| 'link'                | false    |
 | `shape`    | `String`                            | 'circle' \| 'round'                           | true     |
