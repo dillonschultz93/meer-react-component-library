@@ -1,0 +1,19 @@
+// Generated with utilities/create-component.js
+@import "style/main.scss";
+
+.icon {
+  display: inline;
+  transition: all 150ms ease-in-out;
+}
+
+.interactive {
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(75%);
+  }
+
+  &:active {
+    filter: brightness(55%);
+  }
+}

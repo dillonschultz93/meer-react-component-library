@@ -1,0 +1,143 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import Icon from '../Icon/Icon';
+import { IconName, ValidColors } from '../Icon/Icon.types';
+
+<Meta title="Components/Icon" component={Icon} />
+
+# Icon
+
+The `<Icon>` component dynamically injects `svg` paths based on the `name` prop which is defined in the [type definitions](https://github.com/dillonschultz93/meer-react-component-library/blob/dev/src/Icon/Icon.types.ts).
+
+<br />
+<br />
+
+## Name
+
+The `name` prop defines the `svg` paths that will be injected. [A list of names can be found here](https://github.com/dillonschultz93/meer-react-component-library/blob/dev/src/Icon/Icon.types.ts).
+
+<Canvas>
+	<Story name="Name">
+		{Object.keys(IconName).map((icon, index) => <Icon key={index} name={IconName[icon]} size={24} />)}
+	</Story>
+</Canvas>
+
+<br />
+
+## Size
+
+The `size` prop determines the height of the icon as a pixel value.
+
+### 18
+
+<Canvas>
+	<Story name="Size/18">
+		{Object.keys(IconName).map((icon, index) => <Icon key={index} name={IconName[icon]} size={18} />)}
+	</Story>
+</Canvas>
+
+### 24
+
+<Canvas>
+	<Story name="Size/24">
+		{Object.keys(IconName).map((icon, index) => <Icon key={index} name={IconName[icon]} size={24} />)}
+	</Story>
+</Canvas>
+
+### 32
+
+<Canvas>
+	<Story name="Size/32">
+		{Object.keys(IconName).map((icon, index) => <Icon key={index} name={IconName[icon]} size={32} />)}
+	</Story>
+</Canvas>
+
+### 40
+
+<Canvas>
+	<Story name="Size/40">
+		{Object.keys(IconName).map((icon, index) => <Icon key={index} name={IconName[icon]} size={40} />)}
+	</Story>
+</Canvas>
+
+### 48
+
+<Canvas>
+	<Story name="Size/48">
+		{Object.keys(IconName).map((icon, index) => <Icon key={index} name={IconName[icon]} size={48} />)}
+	</Story>
+</Canvas>
+
+### 56
+
+<Canvas>
+	<Story name="Size/56">
+		{Object.keys(IconName).map((icon, index) => <Icon key={index} name={IconName[icon]} size={56} />)}
+	</Story>
+</Canvas>
+
+### 64
+
+<Canvas>
+	<Story name="Size/64">
+		{Object.keys(IconName).map((icon, index) => <Icon key={index} name={IconName[icon]} size={64} />)}
+	</Story>
+</Canvas>
+
+### 72
+
+<Canvas>
+	<Story name="Size/72">
+		{Object.keys(IconName).map((icon, index) => <Icon key={index} name={IconName[icon]} size={72} />)}
+	</Story>
+</Canvas>
+
+<br />
+
+## Color
+
+The `color` prop sets the color of the fill of the injected `svg`. [A list of colors can be found here](https://github.com/dillonschultz93/schultz-design-system/blob/dev/src/Icon/Icon.types.ts).
+
+<Canvas>
+	<Story name="Valid Colors">
+		{Object.keys(ValidColors).map((color, index) => <Icon key={index} name={IconName.heartFill} size={32} color={color} />)}
+	</Story>
+</Canvas>
+
+## Animate
+
+Current the only animation icon available is a spinning half circle. To display this simplay pass the `animate` prop. This prop is typed as either a `Boolean` or a `Number`.
+
+### Loop indefinite
+
+If the `animate` prop is passed as a `Boolean`, then the animation will loop indefinitely.
+
+<Canvas>
+	<Story name="Animate Indefinitely">
+		<Icon name="person" size={24} animate />
+	</Story>
+</Canvas>
+
+### Loop for a specified amount of times
+
+If the prop is passed as a `Number`, then the animation will loop for the number value.
+
+<Canvas>
+	<Story name="Animate Definitely">
+		<Icon size={24} animate={{delay: 5}} />
+	</Story>
+</Canvas>
+
+
+
+
+
+## Prop Definitions
+
+| Name      | Type                                | Value(s)                                     | Optional |
+|-----------|-------------------------------------|----------------------------------------------|----------|
+| `animate` | `Boolean` \| `Number`               |                                              | true     |
+| `color`   | `VailidColors`                      |                                              | true     |
+| `name`    | `IconName`                          |                                              | false    |
+| `onClick` | `(event: React.MouseEvent) => void` |                                              | true     |
+| `size`    | `Number`                            | 18 \| 24 \| 32 \| 40 \| 48 \| 56 \| 64 \| 72 | false    |
