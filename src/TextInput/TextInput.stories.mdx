@@ -1,0 +1,98 @@
+import { useState } from 'react';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import TextInput from '../TextInput/TextInput';
+
+<Meta title="Components/TextInput" component={TextInput} />
+
+# TextInput
+
+The `<TextInput>` component is a typical `<input>` element. It should be used to collect short forms of text data.
+
+<br />
+<br />
+
+The `<TextInput>` component takes a few required props to be properly setup. The `id` prop sets the `id` and `for` attributes on the native `<input>`
+and `<label>` elements. The `name` prop sets the `name` attribute on the native `<input>` element. The `placeholder` prop sets the placeholder content of the
+native `<input>` element. The `type` prop defines the type of input. By default this is set to the value of `'text'`.
+
+<br />
+
+## Basic input
+
+<br />
+
+### Default setup
+
+<Canvas>
+  <Story name="Basic/Default">
+    {() => {
+      const [inputValue, setInputValue] = useState('');
+      return (<TextInput id="basic" name="basic" type="text" placeholder="Enter text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />);
+    }}
+  </Story>
+</Canvas>
+
+### With label
+
+To set a label above the native `<input>` element simply pass a string value to the `label` prop.
+
+<Canvas>
+  <Story name="Basic/Label">
+    {() => {
+      const [inputValue, setInputValue] = useState('');
+      return (<TextInput id="label" name="label" type="text" placeholder="Enter your name" label="Name" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />);
+    }}
+  </Story>
+</Canvas>
+
+
+### With embedded icon
+
+To have a persentational icon embedded within the `<input>` element you must pass an object with the key `name` with a string value of a valid icon name.
+
+<Canvas>
+  <Story name="Basic/Icon/Persentational">
+    {() => {
+      const [inputValue, setInputValue] = useState('');
+      return (<TextInput id="icon" name="icon" type="text" placeholder="Enter your name" label="Name" icon={{name: 'person'}} value={inputValue} onChange={(e) => setInputValue(e.target.value)} />);
+    }}
+  </Story>
+</Canvas>
+
+
+### With interactive icon
+
+To have an interactive icon embedded within the `<input>` element you must pass an object with the key `name` with a string value of a valid icon name, a key called `interactive` with the value `true`, and a key called `interactiveMethod` that passes a click method to the icon.
+
+<Canvas>
+  <Story name="Basic/Icon/Interactive">
+    {() => {
+      const [inputValue, setInputValue] = useState('');
+      const [toggled, setToggled] = useState(false);
+      return (<TextInput id="icon-interactive" name="icon-interactive" type={toggled ? 'text' : 'password'} placeholder="Enter your password" label="Password" icon={{name: toggled ? 'eyeOff' : 'eyeOn', interactive: true, interactiveMethod: () => setToggled(!toggled)}} value={inputValue} onChange={(e) => setInputValue(e.target.value)} />);
+    }}
+  </Story>
+</Canvas>
+
+<br />
+
+## Validation
+
+<Canvas>
+  <Story name="Validation/Required">
+    {() => {
+      const [inputValue, setInputValue] = useState('');
+      const [validation, setValidation] = useState({type: null, message: ''});
+      const handleOnBlur = () => {
+        inputValue === '' ? setValidation({type: 'error', message: 'Please enter your email'}) : setValidation({type: 'success', message: ''});
+      };
+      return (<TextInput id="required" name="required" type="email" placeholder="Enter your email" label="Email" icon={{name: 'mail'}} value={inputValue} onChange={(e) => setInputValue(e.target.value)} required validationState={validation} onBlur={handleOnBlur} />);
+    }}
+  </Story>
+</Canvas>
+
+
+## Prop Definitions
+
+<ArgsTable of={TextInput} />
