@@ -6,7 +6,7 @@ import { ICON } from './IconDef';
 
 import './Icon.scss';
 
-const Icon: React.FC<IconProps> = ({ name, size = 18, color = 'gray9', onClick, animate }) => {
+const Icon: React.FC<IconProps> = ({ name, size = 18, color = ValidColors.gray9, onClick, animate }) => {
   let innerPath = null;
 
   if (name) {
@@ -27,8 +27,8 @@ const Icon: React.FC<IconProps> = ({ name, size = 18, color = 'gray9', onClick, 
       className={defaultStyles.join(' ').trim()}
       width={`${size}px`}
       height={`${size}px`}
-      viewBox={`0 0 0 ${size} ${size}`}
-      fill={ValidColors[color]}
+      viewBox={`0 0 ${size} ${size}`}
+      fill={color}
       xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
     >

@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { actions } from '@storybook/addon-actions';
 import Icon from '../Icon/Icon';
 import { IconName, ValidColors } from '../Icon/Icon.types';
@@ -100,7 +100,7 @@ The `color` prop sets the color of the fill of the injected `svg`. [A list of co
 
 <Canvas>
 	<Story name="Valid Colors">
-		{Object.keys(ValidColors).map((color, index) => <Icon key={index} name={IconName.heartFill} size={32} color={color} />)}
+		{Object.keys(ValidColors).map((color, index) => <Icon key={index} name={IconName.heartFill} size={32} color={ValidColors[color]} />)}
 	</Story>
 </Canvas>
 
@@ -134,10 +134,4 @@ If the prop is passed as a `Number`, then the animation will loop for the number
 
 ## Prop Definitions
 
-| Name      | Type                                | Value(s)                                     | Optional |
-|-----------|-------------------------------------|----------------------------------------------|----------|
-| `animate` | `Boolean` \| `Number`               |                                              | true     |
-| `color`   | `VailidColors`                      |                                              | true     |
-| `name`    | `IconName`                          |                                              | false    |
-| `onClick` | `(event: React.MouseEvent) => void` |                                              | true     |
-| `size`    | `Number`                            | 18 \| 24 \| 32 \| 40 \| 48 \| 56 \| 64 \| 72 | false    |
+<ArgsTable of={Icon} />

@@ -1,5 +1,5 @@
 module.exports = (componentName) => ({
-  content: `import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+  content: `import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { actions } from '@storybook/addon-actions';
 import ${componentName} from '../${componentName}/${componentName}';
 

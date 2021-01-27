@@ -1,0 +1,88 @@
+// Generated with utilities/create-component.js
+@import "style/main.scss";
+
+.text-input {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  
+  & label {
+    font-size: $small-size;
+    line-height: 1;
+    font-weight: $semi-bold;
+    margin-bottom: $outset0;
+    margin-left: $outset0;
+
+    & span {
+      color: $danger1;
+    }
+  }
+
+  & input {
+    appearance: none;
+    outline: none;
+    box-sizing: border-box;
+    display: inline;
+    height: 2.5rem;
+    padding: $inset0;
+    color: $gray9;
+    font-size: $small-size;
+    background-color: $gray0;
+    border: 1px solid $gray7;
+    border-radius: $corner1;
+    transition: all 250ms ease-in-out;
+
+    &::placeholder {
+      color: $gray5;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      border-color: $indigo5;
+    }
+
+    &:active,
+    &:focus {
+      box-shadow: 0 0 0 2px $indigo1;
+    }
+  }
+}
+
+.error {
+  border-color: $danger3 !important;
+}
+
+.warning {
+  border-color: $warning4 !important;
+}
+
+.success {
+  border-color: $success3 !important;
+}
+
+.validation-message {
+  margin-top: $outset0;
+  font-size: $small-size;
+  height: 0.875rem;
+
+  &--error {
+    color: $danger3;
+  }
+
+  &--warning {
+    color: $warning4;
+  }
+
+  &--success {
+    color: $success3;
+  }
+}
+
+.embedded-icon {
+  padding-left: 2rem !important;
+}
+
+.interactive-icon {
+  padding-right: 2rem !important;
+}
