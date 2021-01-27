@@ -7,7 +7,11 @@ export interface ButtonProps {
   shape?: 'circle' | 'round';
   block?: boolean;
   href?: string;
-  icon?: React.ReactElement;
+  icon?: {
+    name: string;
+    color: string;
+    size: 18 | 24 | 32 | 40 | 48 | 56 | 64 | 72;
+  };
   target?: '_self' | '_blank' | '_parent' | '_top';
   onClick?: (event: React.MouseEvent) => void;
 }

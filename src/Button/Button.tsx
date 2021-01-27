@@ -1,12 +1,10 @@
 // Generated with util/create-component.js
 import React from 'react';
-
 import { ButtonProps } from './Button.types';
-
 import './Button.scss';
+import Icon from '../Icon/Icon';
+import { IconName, ValidColors } from '../Icon/Icon.types';
 
-//TODO Add a loading property
-//TODO Add an icon property
 const Button: React.FC<ButtonProps> = ({
   type = 'default',
   size = 'medium',
@@ -37,7 +35,7 @@ const Button: React.FC<ButtonProps> = ({
         >
           {icon && (
             <span role="img" className="button--icon">
-              {icon}
+              {<Icon name={IconName[icon.name]} size={icon.size} color={ValidColors[icon.color]} />}
             </span>
           )}
           {children && <span>{children}</span>}
@@ -56,7 +54,7 @@ const Button: React.FC<ButtonProps> = ({
         >
           {icon && (
             <span role="img" className="button--icon">
-              {icon}
+              {<Icon name={IconName[icon.name]} size={icon.size} color={ValidColors[icon.color]} />}
             </span>
           )}
           {children && <span>{children}</span>}
@@ -75,7 +73,7 @@ const Button: React.FC<ButtonProps> = ({
         >
           {icon && (
             <span role="img" className="button--icon">
-              {icon}
+              {<Icon name={IconName[icon.name]} size={icon.size} color={ValidColors[icon.color]} />}
             </span>
           )}
           {children && <span>{children}</span>}
