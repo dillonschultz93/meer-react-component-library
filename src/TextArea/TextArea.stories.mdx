@@ -1,0 +1,124 @@
+import { useState } from 'react';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import TextArea from '../TextArea/TextArea';
+
+<Meta title='Components/TextArea' component={TextArea} />
+
+# TextArea
+
+The `<TextArea>` component is a typical `<textarea>` element. It should be used to collect long forms of data, such as a comment or feedback.
+
+<br />
+<br />
+
+The `<TextArea>` component takes a few required props to be properly setup. The `id` prop sets the `id` and `for` attributes on the native `<textarea>`
+and `<label>` elements. The `name` prop sets the `name` attribute on the native `<textarea>` element.
+
+<br />
+
+## Basic textarea
+
+<br />
+
+### Default setup
+
+<Canvas>
+  <Story name='Basic/Default'>
+    {() => {
+        const [value, setValue] = useState('');
+        const handleOnChange = (e) => setValue(e.target.value);
+        return (
+          <div style={{width: '50%'}}>
+            <TextArea id="default" name="default" value={value} onChange={handleOnChange} />
+          </div>
+        );
+    }}
+  </Story>
+</Canvas>
+
+### With label
+
+To set a label above the native `<textarea>` element simply pass a string value to the label prop.
+
+<Canvas>
+  <Story name='Basic/Label'>
+    {() => {
+        const [value, setValue] = useState('');
+        const handleOnChange = (e) => setValue(e.target.value);
+        return (
+          <div style={{width: '50%'}}>
+            <TextArea id="label" name="label" label="Comments" value={value} onChange={handleOnChange} />
+          </div>
+        );
+    }}
+  </Story>
+</Canvas>
+
+<br />
+
+## Resize
+
+<br />
+
+### Vertical
+
+By default resizing is set to vertical.
+
+<Canvas>
+  <Story name='Resize/Vertical'>
+    {() => {
+        const [value, setValue] = useState('');
+        const handleOnChange = (e) => setValue(e.target.value);
+        return (
+          <div style={{width: '50%'}}>
+            <TextArea id="vertical" name="vertical" label="Description" value={value} onChange={handleOnChange} />
+          </div>
+        );
+    }}
+  </Story>
+</Canvas>
+
+### None
+
+To limit the resizing set the `resize` prop to `"none"`
+
+<Canvas>
+  <Story name='Resize/None'>
+    {() => {
+        const [value, setValue] = useState('');
+        const handleOnChange = (e) => setValue(e.target.value);
+        return (
+          <div style={{width: '50%'}}>
+            <TextArea id="none" name="none" label="Description" resize="none" value={value} onChange={handleOnChange} />
+          </div>
+        );
+    }}
+  </Story>
+</Canvas>
+
+<br />
+
+## Character limit
+
+To set a character limit on the component the `showCount` and `maxLength` props must be passed. `showCount` must be set to `true` before `maxLength` is set.
+The `maxLength` prop sets the `maxlength` attribute on the native `<textarea>` element.
+
+<Canvas>
+  <Story name='Character Limit'>
+    {() => {
+        const [value, setValue] = useState('');
+        const handleOnChange = (e) => setValue(e.target.value);
+        return (
+          <div style={{width: '50%'}}>
+            <TextArea id="character-limit" name="character-limit" label="Tweet" value={value} onChange={handleOnChange} showCount maxLength={240} />
+          </div>
+        );
+    }}
+  </Story>
+</Canvas>
+
+
+## Prop Definitions
+
+<ArgsTable of={TextArea} />

@@ -1,0 +1,70 @@
+// Generated with utilities/create-component.js
+@import 'style/main.scss';
+
+.text-area {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  
+  & label {
+    font-size: $small-size;
+    line-height: 1;
+    font-weight: $semi-bold;
+    margin-bottom: $outset0;
+    margin-left: $outset0;
+
+    & span {
+      color: $danger1;
+    }
+  }
+
+  & textarea {
+    font-family: inherit;
+    appearance: none;
+    outline: none;
+    box-sizing: border-box;
+    display: inline;
+    padding: $inset0;
+    color: $gray9;
+    font-size: $small-size;
+    background-color: $gray0;
+    border: 1px solid $gray7;
+    border-radius: $corner1;
+    transition: all 250ms ease-in-out;
+
+    &::placeholder {
+      color: $gray5;
+    }
+
+    &:active:not(:disabled),
+    &:focus:not(:disabled),
+    &:hover:not(:disabled) {
+      border-color: $indigo5;
+    }
+
+    &:active:not(:disabled),
+    &:focus:not(:disabled) {
+      box-shadow: 0 0 0 2px $indigo1;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      border-color: $gray2;
+      background-color: $gray0;
+    }
+
+    &:disabled::placeholder {
+      color: $gray2;
+    }
+  }
+}
+
+.progress-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.disabled {
+  color: $gray2;
+  cursor: not-allowed;
+}
