@@ -1,7 +1,7 @@
 // Generated with utilities/create-component.js
-@import "style/main.scss";
+@import 'style/main.scss';
 
-.text-input {
+.text-area {
   display: inline-flex;
   flex-direction: column;
   position: relative;
@@ -18,12 +18,12 @@
     }
   }
 
-  & input {
+  & textarea {
+    font-family: inherit;
     appearance: none;
     outline: none;
     box-sizing: border-box;
     display: inline;
-    height: 2.5rem;
     padding: $inset0;
     color: $gray9;
     font-size: $small-size;
@@ -59,42 +59,9 @@
   }
 }
 
-.error {
-  border-color: $danger3 !important;
-}
-
-.warning {
-  border-color: $warning4 !important;
-}
-
-.success {
-  border-color: $success3 !important;
-}
-
-.validation-message {
-  margin-top: $outset0;
-  font-size: $small-size;
-  height: 0.875rem;
-
-  &--error {
-    color: $danger3;
-  }
-
-  &--warning {
-    color: $warning4;
-  }
-
-  &--success {
-    color: $success3;
-  }
-}
-
-.embedded-icon {
-  padding-left: 2rem !important;
-}
-
-.interactive-icon {
-  padding-right: 2rem !important;
+.progress-container {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .disabled {

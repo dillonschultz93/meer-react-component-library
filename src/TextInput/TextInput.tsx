@@ -22,6 +22,7 @@ const TextInput: React.FC<TextInputProps> = ({
   validation,
   icon,
   validationState,
+  width,
 }) => {
   const styles = [];
   (required || validation) && styles.push(`${validationState.type}`);
@@ -29,10 +30,10 @@ const TextInput: React.FC<TextInputProps> = ({
   icon && icon.interactive && styles.push('interactive-icon');
 
   return (
-    <div style={{ display: 'inline-flex', flexDirection: 'column' }}>
+    <div style={{ display: 'inline-flex', flexDirection: 'column', width: `${width ? width : 100}%` }}>
       <div data-testid="TextInput" className="text-input">
         {label && (
-          <label htmlFor={id} data-testid="label">
+          <label htmlFor={id} data-testid="label" className={disabled && 'disabled'}>
             {label} {required && <span>*</span>}
           </label>
         )}
@@ -50,7 +51,7 @@ const TextInput: React.FC<TextInputProps> = ({
         />
         {icon && !icon.interactive && (
           <span data-testid="icon-embedded" style={{ position: 'absolute', bottom: '0.6rem', left: '0.5rem' }}>
-            <Icon name={IconName[icon.name]} size={18} color={ValidColors.gray7} />
+            <Icon name={IconName[icon.name]} size={18} color={disabled ? ValidColors.gray2 : ValidColors.gray7} />
           </span>
         )}
         {icon && icon.interactive && (
@@ -64,7 +65,12 @@ const TextInput: React.FC<TextInputProps> = ({
               display: value !== '' ? 'block' : 'none',
             }}
           >
-            <Icon name={IconName[icon.name]} size={18} color={ValidColors.gray7} onClick={icon.interactiveMethod} />
+            <Icon
+              name={IconName[icon.name]}
+              size={18}
+              color={disabled ? ValidColors.gray2 : ValidColors.gray7}
+              onClick={icon.interactiveMethod}
+            />
           </span>
         )}
       </div>

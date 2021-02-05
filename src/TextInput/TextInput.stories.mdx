@@ -28,7 +28,7 @@ native `<input>` element. The `type` prop defines the type of input. By default 
   <Story name="Basic/Default">
     {() => {
       const [inputValue, setInputValue] = useState('');
-      return (<TextInput id="basic" name="basic" type="text" placeholder="Enter text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />);
+      return (<TextInput id="basic" name="basic" type="text" placeholder="Enter text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} width={25} />);
     }}
   </Story>
 </Canvas>
@@ -41,7 +41,7 @@ To set a label above the native `<input>` element simply pass a string value to 
   <Story name="Basic/Label">
     {() => {
       const [inputValue, setInputValue] = useState('');
-      return (<TextInput id="label" name="label" type="text" placeholder="Enter your name" label="Name" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />);
+      return (<TextInput id="label" name="label" type="text" placeholder="Enter your name" label="Name" value={inputValue} onChange={(e) => setInputValue(e.target.value)} width={25} />);
     }}
   </Story>
 </Canvas>
@@ -55,7 +55,7 @@ To have a persentational icon embedded within the `<input>` element you must pas
   <Story name="Basic/Icon/Persentational">
     {() => {
       const [inputValue, setInputValue] = useState('');
-      return (<TextInput id="icon" name="icon" type="text" placeholder="Enter your name" label="Name" icon={{name: 'person'}} value={inputValue} onChange={(e) => setInputValue(e.target.value)} />);
+      return (<TextInput id="icon" name="icon" type="text" placeholder="Enter your name" label="Name" icon={{name: 'person'}} value={inputValue} onChange={(e) => setInputValue(e.target.value)} width={25} />);
     }}
   </Story>
 </Canvas>
@@ -70,7 +70,7 @@ To have an interactive icon embedded within the `<input>` element you must pass 
     {() => {
       const [inputValue, setInputValue] = useState('');
       const [toggled, setToggled] = useState(false);
-      return (<TextInput id="icon-interactive" name="icon-interactive" type={toggled ? 'text' : 'password'} placeholder="Enter your password" label="Password" icon={{name: toggled ? 'eyeOff' : 'eyeOn', interactive: true, interactiveMethod: () => setToggled(!toggled)}} value={inputValue} onChange={(e) => setInputValue(e.target.value)} />);
+      return (<TextInput id="icon-interactive" name="icon-interactive" type={toggled ? 'text' : 'password'} placeholder="Enter your password" label="Password" icon={{name: toggled ? 'eyeOff' : 'eyeOn', interactive: true, interactiveMethod: () => setToggled(!toggled)}} value={inputValue} onChange={(e) => setInputValue(e.target.value)} width={25} />);
     }}
   </Story>
 </Canvas>
@@ -87,7 +87,20 @@ To have an interactive icon embedded within the `<input>` element you must pass 
       const handleOnBlur = () => {
         inputValue === '' ? setValidation({type: 'error', message: 'Please enter your email'}) : setValidation({type: 'success', message: ''});
       };
-      return (<TextInput id="required" name="required" type="email" placeholder="Enter your email" label="Email" icon={{name: 'mail'}} value={inputValue} onChange={(e) => setInputValue(e.target.value)} required validationState={validation} onBlur={handleOnBlur} />);
+      return (<TextInput id="required" name="required" type="email" placeholder="Enter your email" label="Email" icon={{name: 'mail'}} value={inputValue} onChange={(e) => setInputValue(e.target.value)} required validationState={validation} onBlur={handleOnBlur} width={25} />);
+    }}
+  </Story>
+</Canvas>
+
+<br />
+
+## Disabled
+
+<Canvas>
+  <Story name="Disabled">
+    {() => {
+      const [inputValue, setInputValue] = useState('');
+      return (<TextInput id="disabled" name="disabled" type="text" placeholder="Enter your name" label="Name" value={inputValue} onChange={(e) => setInputValue(e.target.value)} width={25} disabled />);
     }}
   </Story>
 </Canvas>
