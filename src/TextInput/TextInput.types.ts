@@ -20,4 +20,5 @@ export interface TextInputProps {
     message: string;
   };
   disabled?: boolean;
+  width?: 25 | 33.33 | 50 | 66.33 | 75 | 100;
 }
