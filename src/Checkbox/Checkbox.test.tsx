@@ -1,6 +1,6 @@
 // Generated with utilities/create-component.js
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 import Checkbox from './Checkbox';
 import { CheckboxProps } from './Checkbox.types';
@@ -34,5 +34,34 @@ describe('Checkbox', () => {
     expect(component).toHaveAttribute('name', 'test');
     expect(component).toHaveAttribute('value', 'test');
     expect(label).toHaveTextContent('Test');
+  });
+
+  it('should render as checked', () => {
+    props.checked = true;
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('checkbox');
+
+    expect(component).toHaveAttribute('checked');
+  });
+
+  it('should render as required', () => {
+    props.required = true;
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('checkbox');
+
+    expect(component).toHaveAttribute('required');
+  });
+
+  it('should render as disabled', () => {
+    props.disabled = true;
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('checkbox');
+    const label = getByTestId('label');
+
+    expect(component).toHaveAttribute('disabled');
+    expect(label).toHaveClass('disabled-label');
   });
 });
