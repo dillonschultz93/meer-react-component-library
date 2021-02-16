@@ -1,6 +1,6 @@
 // Generated with utilities/create-component.js
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import Checkbox from './Checkbox';
 import { CheckboxProps } from './Checkbox.types';
