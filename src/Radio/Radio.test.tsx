@@ -2,11 +2,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Checkbox from './Checkbox';
-import { CheckboxProps } from './Checkbox.types';
+import Radio from './Radio';
+import { RadioProps } from './Radio.types';
 
-describe('Checkbox', () => {
-  let props: CheckboxProps;
+describe('Radio', () => {
+  let props: RadioProps;
 
   beforeEach(() => {
     let checkedState = false;
@@ -21,13 +21,13 @@ describe('Checkbox', () => {
     };
   });
 
-  const renderComponent = () => render(<Checkbox {...props} />);
+  const renderComponent = () => render(<Radio {...props} />);
 
   it('should render with default props', () => {
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId('checkbox');
-    const label = getByTestId('label');
+    const component = getByTestId('radio');
+    const label = getByTestId('radio-label');
 
     expect(component).toBe;
     expect(component).toHaveAttribute('id', 'test');
@@ -40,7 +40,7 @@ describe('Checkbox', () => {
     props.checked = true;
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId('checkbox');
+    const component = getByTestId('radio');
 
     expect(component).toHaveAttribute('checked');
   });
@@ -49,7 +49,7 @@ describe('Checkbox', () => {
     props.required = true;
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId('checkbox');
+    const component = getByTestId('radio');
 
     expect(component).toHaveAttribute('required');
   });
@@ -58,8 +58,8 @@ describe('Checkbox', () => {
     props.disabled = true;
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId('checkbox');
-    const label = getByTestId('label');
+    const component = getByTestId('radio');
+    const label = getByTestId('radio-label');
 
     expect(component).toHaveAttribute('disabled');
     expect(label).toHaveClass('disabled-label');

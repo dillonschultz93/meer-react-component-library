@@ -1,0 +1,82 @@
+// Generated with utilities/create-component.js
+@import 'style/main.scss';
+
+.radio {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: $default-size;
+  line-height: 100%;
+  font-weight: $semi-bold;
+  margin: 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  cursor: pointer;
+
+  span {
+    color: $danger3;
+  }
+
+  input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    margin-right: $outset0;
+    width: 1rem;
+    height: 1rem;
+    background-color: transparent;
+    border: 1px solid $gray7;
+    border-radius: 100%;
+    transition: all 150ms ease-in-out;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      border-color: $indigo5;
+    }
+
+    &:active:not(:disabled) {
+      background-color: $indigo0;
+      border-color: $indigo6;
+      transform: scale(0.95);
+    }
+
+    &:focus:not(:disabled) {
+      outline: none;
+      box-shadow: 0 0 0 2px $indigo2;
+    }
+
+    &:checked {
+      border-color: $indigo5;
+      background-color: $indigo0;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 50%;
+        height: 50%;
+        border-radius: 100%;
+        background-color: $indigo5;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+      }
+    }
+
+    &:disabled {
+      border-color: $gray2;
+      background-color: $gray1;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.disabled-label {
+  color: $gray2;
+  cursor: not-allowed;
+}
