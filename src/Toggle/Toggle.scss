@@ -1,0 +1,134 @@
+// Generated with utilities/create-component.js
+@import 'style/main.scss';
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+}
+
+.toggle__container {
+  display: flex;
+  align-items: center;
+}
+
+.toggle__checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  margin: 0;
+
+  &:checked + .toggle .toggle__knob {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+
+    & .toggle__knob__icon-container {
+      transform: rotate(0deg);
+      opacity: 1;
+    }
+  }
+
+  &:checked + .toggle {
+    background-color: $indigo5;
+    border-color: $indigo8;
+
+    &:hover {
+      border-color: $indigo9 !important;
+      background-color: $indigo6;
+    }
+
+    &:focus {
+      background-color: $indigo6;
+    }
+  }
+}
+
+.toggle {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: min-content;
+  min-width: $outset5;
+  height: $outset2;
+  background-color: $gray3;
+  border: 1px solid $gray7;
+  border-radius: 1rem;
+  position: relative;
+  transition: all 250ms ease-in-out;
+
+  &:hover {
+    background-color: $gray4;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $indigo2;
+    background-color: $gray4;
+  }
+
+  & .toggle__knob {
+    box-sizing: border-box;
+    content: '';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 2px;
+    width: calc(#{$outset2} - 4px);
+    height: calc(#{$outset2} - 4px);
+    border-radius: calc(#{$outset2} - 4px);
+    transition: 250ms ease-in-out;
+    background-color: $gray0;
+    box-shadow: $initial-shadow;
+
+    & .toggle__knob__icon-container {
+      transition: all 250ms ease-in-out;
+      transform-origin: center;
+      transform: rotate(-90deg);
+      opacity: 0;
+    }
+  }
+
+  &:active .toggle__knob {
+    width: calc(#{$outset2} + 1px);
+  }
+}
+
+.toggle__disabled {
+  background-color: $gray2;
+  border-color: $gray3;
+  cursor: not-allowed;
+
+  &:hover {
+    background-color: $gray2;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: $gray2;
+  }
+
+  & .toggle__knob {
+    background-color: $gray1;
+    box-shadow: none;
+  }
+
+  &:active .toggle__knob {
+    width: calc(#{$outset2} - 4px);
+  }
+}
+
+.toggle__label {
+  font-weight: $semi-bold;
+  margin-left: $outset0;
+  user-select: none;
+  cursor: pointer;
+}
+
+.toggle__label__disabled {
+  user-select: none;
+  cursor: not-allowed;
+  color: $gray2;
+}
