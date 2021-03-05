@@ -1,0 +1,45 @@
+import { useState } from 'react'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import Toggle from '../Toggle/Toggle';
+
+<Meta title='Components/Toggle' component={Toggle} />
+
+# Toggle
+
+The `<Toggle />` component is just a glorified and stylized checkbox.
+
+## Default
+
+<Canvas>
+  <Story name='Default'>
+    {() => {
+      const [checkedState, setCheckedState] = useState(false);
+      const handleOnChange = () => {
+        setCheckedState(!checkedState);
+      }
+      return (<Toggle id="toggle" name="toggle" value="toggle" label="Default" checked={checkedState} onChange={handleOnChange} />)
+    }}
+  </Story>
+</Canvas>
+
+<br />
+<br />
+
+## Disabled
+
+<Canvas>
+  <Story name='Disabled'>
+    {() => {
+      const [checkedState, setCheckedState] = useState(false);
+      const handleOnChange = () => {
+        setCheckedState(!checkedState);
+      }
+      return (<Toggle id="disabled-toggle" name="disabled-toggle" value="disabled toggle" label="Disabled" checked={checkedState} onChange={handleOnChange} disabled />)
+    }}
+  </Story>
+</Canvas>
+
+## Prop Definitions
+
+<ArgsTable of={Toggle} />

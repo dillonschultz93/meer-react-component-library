@@ -70,7 +70,7 @@ export enum ValidColors {
 
 export interface IconProps {
   name: IconName;
-  size: 18 | 24 | 32 | 40 | 48 | 56 | 64 | 72;
+  size: 12 | 18 | 24 | 32 | 40 | 48 | 56 | 64 | 72;
   animate?: boolean | { delay: number };
   color?: ValidColors;
   onClick?: (e: React.MouseEvent) => void;
